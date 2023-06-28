@@ -1,5 +1,4 @@
 // NodeJS: v18.16.0
-// MongoDB: 5.0 (Docker)
 // Typescript 5.1.3
 import mongoose from 'mongoose'; // mongoose@7.3
 import { MongoMemoryReplSet } from 'mongodb-memory-server';
@@ -25,9 +24,7 @@ async function main() {
 
   await mongoose.connect(MONGO_URI, {
     dbName: "test",
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  } as mongoose.ConnectOptions);
+  });
 
   await Test.create({  });
 
